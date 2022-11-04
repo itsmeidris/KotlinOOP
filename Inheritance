@@ -1,0 +1,48 @@
+fun main(){
+    var m1 =MathTeacher("Hassan" ,34 ,"Maths")
+    m1.TeachMath()
+    m1.Imhere()
+    println(".................")
+    
+    var f1 =FootBaller("Cristiano" ,37 ,"Man United")
+    f1.PlaySport()
+    f1.Imhere()
+    println(".................")
+    
+    var bs1 =BuisnessMan("Edris" ,29 ,"E-commerce buisness")
+    bs1.RunBuis()
+    bs1.Imhere()
+    println(".................")
+
+}
+
+open class Person(name:String ,age:Int){
+    init{
+        println("My name is $name.")
+        println("My age is $age.")
+    }
+    open fun Imhere(){println("I AM HERE !")}
+}
+class MathTeacher(name:String ,age:Int ,var module:String) :Person(name ,age){
+    fun TeachMath(){
+        println("I teach $module.")
+    }
+    override fun Imhere(){println("Im here also .")}
+    
+}
+class FootBaller(name:String ,age:Int ,var sport:String) :Person(name ,age){
+    fun PlaySport(){
+        println("I play $sport.")
+    }
+    override fun Imhere(){println("Im here also 2.")}
+
+}
+class BuisnessMan(name:String ,age:Int ,var buis:String) :Person(name ,age){
+    fun RunBuis(){
+        println("I run $buis.")
+    }
+    override fun Imhere(){println("Im here also 3.")}
+
+}
+
+  
