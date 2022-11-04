@@ -1,0 +1,58 @@
+fun main() {
+    
+    //Prm. Constructor
+    val p1 =Person("Edris" ,20)
+    println("My name is ${p1.name}.")
+    println("My age is ${p1.age}.")
+    println()
+    //Prm. Constructor using init block
+    val np1 =NewPerson("Ussama" ,23)
+    println()
+    //Sec. Constructor
+    var np2 =employee("Edris Loulidi" ,20)
+    println("...")
+    var np3 =employee("Edris Loulidi" ,20 ,35000) 
+}
+
+//Primary Constructor 
+class Person(var name:String ,var age:Int){
+    
+}
+//Primary Constructor with init block
+class NewPerson(name:String ,age:Int){
+    var Pname:String
+    var Page:Int
+    //We could have initialized the class attributes here !!!
+    
+    init{
+        Pname =name
+        Page =age
+        println("Your name is =$Pname.")
+        println("Your age is =$Page.")
+    }
+}
+
+//Secondary Constructor
+class employee{
+    var Npname:String
+    var Npage:Int
+    
+    //1 Secondary Constructor
+    constructor(_name:String ,_age:Int){
+        Npname =_name
+        Npage =_age
+        println("My new name is $Npname.")
+        println("My new age is $Npage.")
+    }
+    
+    //2 Secondary Constructor that calls the 1 Secondary Constructor and adds another parameter
+    constructor(_name:String ,_age:Int ,_salary:Int) :this(_name ,_age){
+        Npname =_name
+        Npage =_age
+        var Npsalary:Int =_salary
+        println("My name is $Npname.")
+        println("My new age is ${Npage + 3}.")
+        println("My salary is $Npsalary.")
+        
+    }
+}
