@@ -1,0 +1,25 @@
+fun main(){
+    val cr1 =Car("Mercedes Benz" ,2022)
+    cr1.carInfos()    
+    cr1.turnOnCar()
+}
+
+
+abstract class Vehicle(var name:String ,var model:Int){
+    open fun carInfos(){
+        println("Car name = $name.")
+        println("Car model = $model.")
+    }
+    abstract fun turnOnCar()
+    abstract fun turnOffCar()    
+}
+
+class Car(name:String ,model:Int) :Vehicle(name ,model){
+    
+    override fun turnOnCar(){
+        println("The $name car is on !")
+    }
+    override fun turnOffCar(){
+        println("The $name car is off !")
+    }
+}
