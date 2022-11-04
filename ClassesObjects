@@ -1,0 +1,42 @@
+fun main() {
+    var d1 =DareDevil()
+    d1.SeasonNumber(3)
+    d1.RatingOverall(3)
+    d1.WichPlatform("Netflix")
+    d1.ShowInfos()
+    
+}
+class DareDevil{
+    var seasons:Int? =null
+    var ShowPlatform:String?=null
+    var rating:Int? =null
+    var opinion:Boolean =false
+    
+    fun SeasonNumber(sn:Int){
+        seasons =sn
+    }
+        
+    fun RatingOverall(ro:Int){
+        rating =ro
+    }
+    fun WichPlatform(sp:String){
+        ShowPlatform =sp
+        
+    }
+    fun MyOpinion(){
+        if(rating!!<=10 && rating!!>5){
+            opinion =true
+            println("Yes it is !")
+        }else{
+            opinion =false
+            println("Not much !")
+        }
+    }
+        
+    fun ShowInfos(){
+        println("DareDevil has $seasons seasons ,It is on $ShowPlatform and it has $rating in rating overall.")
+        println("is it good ?")
+        MyOpinion()
+    }
+
+}
