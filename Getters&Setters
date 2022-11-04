@@ -1,0 +1,35 @@
+fun main() {
+   val ex1 =GetterSetter()
+   ex1.name ="Edris"
+   println(ex1.name)
+   
+   val p1 =AgeChecker()
+   p1.age =19
+   println(p1.age)
+    
+}
+class GetterSetter{
+    var name:String ="Defaul Value"
+      
+     //Optional Getters and Setters
+     // getter
+    get() = field
+
+    // setter
+    set(value){field = value} 
+}
+class AgeChecker{
+    var age: Int =0
+    
+    get() = field
+    set(value){
+        field = if (value < 18){
+           18
+        }
+        else{
+            value
+        }
+     //constructor(_name:String ,_age:Int)
+       
+ }
+    
