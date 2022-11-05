@@ -1,1 +1,43 @@
+fun main(){
+    var mv1 =movie("Sci-Fiction" ,9 ,"Interstellar")
+    mv1.infosMovie()
+    println()
+    var mv2 =movie("Comedy" ,8 ,"The Hangover")
+    mv2.infosMovie()
+    println()
+    var mv3 =movie("Romance" ,4 ,"Don't Know Romance Movies")
+    mv3.infosMovie()
+    
+}
 
+interface Movies{
+    var typeMovie:String
+    var typeRating:Int
+    
+    fun infosMovie()
+}
+class movie(_typeMovie:String ,_typeRating:Int ,_nameMovie:String): Movies{
+    override var typeMovie:String =""
+    override var typeRating:Int =0
+    var nameMovie:String =""
+    
+    init{
+        typeMovie =_typeMovie
+        typeRating =_typeRating
+        nameMovie =_nameMovie
+        
+    }
+      override fun infosMovie(){
+            print("( Movie Name : $nameMovie ")
+            print("/ Movie Type : $typeMovie ")
+            print("/ Movie Rating : $typeRating )")
+            println()
+            if(typeRating >5 && typeRating <=10){
+                println("$nameMovie movie is good !")
+            }else{
+                println("$nameMovie movie is not good !")
+   
+            }
+            
+        }
+}
