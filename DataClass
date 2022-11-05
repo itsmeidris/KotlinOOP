@@ -1,0 +1,15 @@
+fun main() {
+   var p1 = Person( 20 ,"Edris Loulidi" ,'M')
+   
+   //Generating toString()method
+   println(p1)
+      
+    //Generating copy()method
+   var p2 =p1.copy(name ="Adam Amenzou")
+   print(p2)
+   
+}
+//Creating a class solely to hold data
+data class Person(var age:Int ,var name:String ,var gender:Char){
+    
+}
