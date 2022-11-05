@@ -1,0 +1,30 @@
+fun main() {
+    //Using outer object
+    var sp1 = Shape()
+    println(sp1.color)
+    println(sp1.size)
+    //access the nested class members
+    println(sp1.ShapeType().typeName)
+    sp1.ShapeType().shapeInfos()
+    println()
+    
+    //Using inner object
+    var sp2 =Shape().ShapeType()
+    sp2.typeName ="Triangle"
+    sp2.shapeInfos()
+    
+   
+}
+class Shape{
+    var color:String ="red"
+    var size:Int =4
+    
+    //To access the members of outer class ,define the nested class with "inner" keyword
+    inner class ShapeType{
+        var typeName:String ="Square"
+        
+        fun shapeInfos(){
+            println("the shape is $typeName ,the color is $color ,the size is $size.")
+        }
+    }
+}
