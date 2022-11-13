@@ -1,0 +1,26 @@
+fun main() {
+   MammalCrew =listOf(Sloth("Jerry" ,false) ,Sloth("Tom" ,true) ,Sloth("Spike" ,false))
+   feedCrew(MammalCrew)
+   
+   println()
+   
+   MammalCrew =listOf(Panda("Jerry") ,Panda("Tom") ,Panda("Spike"))
+   feedCrew(MammalCrew)
+}
+
+open class Mammal(var name:String){}
+
+data class Sloth(var Sname:String ,var isTwoFingered:Boolean) :Mammal(Sname){}
+
+data class Panda(var Pname:String) :Mammal(Pname){}
+
+var MammalCrew :List<Mammal> =listOf<Mammal>()
+
+fun feedCrew(MammalCrew :List<Mammal>){
+      for(i in 0 until MammalCrew.size){
+           println("${MammalCrew[i].name} ate some leaves.")
+       }
+ }
+
+
+
