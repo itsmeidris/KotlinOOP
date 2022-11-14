@@ -1,0 +1,33 @@
+//Exception is a runtime problem that terminate and crush programm
+//Exception Handling is technique that fix programm problems
+//Excp-Handling has 4 keywords :(try ,catch ,finally ,throw)
+//Uncheked exception is an exception thrown due to code mistakes such as dividing by zero
+//ArithmeticException ,ArrayIndexOutOfBoundExceptions ,NullPointerException...
+fun main() {
+    val strNum =getNumber("10")
+    println(strNum)
+    
+    val myAge =checkAge(17)
+    println(myAge)
+    
+}
+//Try encloses the code wich will throw an exception
+//Catch handles the exception 
+
+fun getNumber(str :String) :Int{
+    return try{
+        str.toInt()
+    }
+    catch(e :ArithmeticException){
+        0
+    }
+}
+
+//Throw is used to throw a message or a custom exception
+fun checkAge(age :Int){
+    if(age<18){
+        throw ArithmeticException("Uder age !")
+    }else{
+        println("Passed !")
+    }
+}
