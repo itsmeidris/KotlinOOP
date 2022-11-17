@@ -1,0 +1,41 @@
+fun main() {
+   myHighOrderFunction(lambda ,lambda2 ,lambda3)
+   println()
+   myHof2("THIS IS AN ARGUMENT PASSED .",::printName)
+   println()
+   myHof3(::addNums)
+}
+
+//Lmabda Expressions ina High-Order-Function
+
+var lambda ={println("Hello my names is Edris Loulidi")}
+var lambda2 ={println("And i am 20 years old.")}
+var lambda3 ={age:Int ->println("My salary is $age Dhs.")}
+
+//HOF that accepts lambdas
+fun myHighOrderFunction(lmbd1 :() -> Unit ,lmbd2 :()-> Unit ,lmbd3 :(Int) ->Unit){
+    lmbd1()
+    lmbd2()
+    lmbd3(35000)
+}
+
+
+//Passing a functions as parameters
+fun printName(s :String){
+    println(s)
+}
+fun myHof2(str :String ,myFunc :(String)-> Unit){
+    myFunc(str)
+}
+
+//HOF returning values of integer type
+fun addNums(a :Int ,b:Int) :Int{
+    var sum =a + b
+    return sum
+    
+}
+fun myHof3(myFuncAdd :(Int ,Int)->Int){
+    var result =myFuncAdd(12 ,659)
+    println("The sum of is $result.")
+    
+}
